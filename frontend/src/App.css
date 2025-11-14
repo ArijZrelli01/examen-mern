@@ -1,0 +1,531 @@
+/* Reset et base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Navigation */
+.navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* Container principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Page d'accueil */
+.home {
+  text-align: center;
+}
+
+.home h1 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.home p {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.stat-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.quick-actions {
+  margin-top: 4rem;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-btn {
+  background: #667eea;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+  background: #5a6fd8;
+}
+
+/* Pages de liste */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  color: #333;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background: #5a6fd8;
+}
+
+.btn-primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Grids */
+.movies-grid,
+.users-grid,
+.watchlists-grid,
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Cards */
+.movie-card,
+.user-card,
+.watchlist-card,
+.review-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.movie-card:hover,
+.user-card:hover,
+.watchlist-card:hover,
+.review-card:hover {
+  transform: translateY(-2px);
+}
+
+.movie-card h3,
+.user-card h3,
+.watchlist-card h3,
+.review-card h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.synopsis {
+  color: #666;
+  font-style: italic;
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+/* Forms */
+.form-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e1e1e1;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Reviews spécifiques */
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rating {
+  font-size: 1.2rem;
+}
+
+.review-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* États */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  grid-column: 1 / -1;
+}
+
+.empty-state p {
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .page-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.relation-info {
+  background: #e3f2fd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.user-info, .movie-info, .watchlist-details, .review-details {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #2196f3;
+}
+
+.user-info {
+  border-left-color: #4caf50;
+}
+
+.movie-info {
+  border-left-color: #ff9800;
+}
+
+.watchlist-details {
+  border-left-color: #9c27b0;
+}
+
+.review-details {
+  border-left-color: #f44336;
+}
+/* Ajoutez ce CSS si nécessaire */
+.form-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.btn-primary {
+  background: #4299e1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #4a5568;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2em;
+}
+/* Styles communs pour UserCard et MovieCard */
+.user-card, .movie-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e5e9;
+  transition: box-shadow 0.2s;
+}
+
+.user-card:hover, .movie-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.user-card h3, .movie-card h3 {
+  margin: 0 0 12px 0;
+  color: #2d3748;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.user-card p, .movie-card p {
+  margin: 8px 0;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.synopsis {
+  font-style: italic;
+  color: #718096;
+  border-left: 3px solid #e2e8f0;
+  padding-left: 12px;
+  margin-top: 12px !important;
+}
+
+/* Styles des boutons */
+.user-actions, .movie-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.btn-edit, .btn-delete {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.btn-edit {
+  background-color: #4299e1;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #3182ce;
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c53030;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-actions, .movie-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .btn-edit, .btn-delete {
+    padding: 10px 16px;
+  }
+}
